@@ -1,1 +1,1 @@
-web: gunicorn citadelstudios.wsgi:application
+web: gunicorn citadel_studios.wsgi:application
