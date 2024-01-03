@@ -6,14 +6,11 @@
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-packages-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="{% url 'packages' %}" class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-packages-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Recording Packages
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'packages' %}" class="dropdown-item">All Packages</a>
-                <a href="{% url 'packages' %}?sort=price&direction=asc" class="dropdown-item">Gold Package</a>
-                <a href="{% url 'packages' %}?sort=rating&direction=desc" class="dropdown-item ">Silver Package</a>
-                <a href="{% url 'packages' %}?sort=category&direction=asc" class="dropdown-item ">Bronze Package</a>
             </div>
         </li>
 
