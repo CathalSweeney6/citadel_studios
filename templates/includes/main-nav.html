@@ -14,22 +14,26 @@
             </div>
         </li>
 
+        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            About Us
+        </a>
+
+        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="equipment-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Equipment
+        </a>
+
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="equipment-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Equipment
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="merchandise-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Merchandise
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="equipment-link">
-                <a href="{% url 'packages' %}?category=guitar" class="dropdown-item">Guitars</a>
-                <a href="{% url 'packages' %}?category=bass" class="dropdown-item">Bass</a>
-                <a href="{% url 'packages' %}?category=drums" class="dropdown-item">Drums</a>
-                <a href="{% url 'packages' %}?category=keys" class="dropdown-item">Keys / Synths</a>
-                <a href="{% url 'packages' %}?category=recording" class="dropdown-item">Recording Equipment & Software</a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="{% url 'packages' %}" class="dropdown-item">All Merchandise</a>
+                <a href="{% url 'packages' %}" class="dropdown-item">T-Shirts</a>
+                <a href="{% url 'packages' %}" class="dropdown-item">Hoodies</a>
+                <a href="{% url 'packages' %}" class="dropdown-item">Beanies</a>
+                <a href="{% url 'packages' %}" class="dropdown-item">Mugs</a>
             </div>
         </li>
-
-        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="merchandise-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Merchandise
-        </a>
 
         <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="reviews-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Reviews
