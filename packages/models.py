@@ -29,3 +29,9 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Calendar(models.Model):
+    title = models.CharField(max_length=300)
+    description = models.TextField(blank=True)
+    date = models.DateField()

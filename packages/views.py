@@ -4,8 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Calendar
+from .forms import ProductForm, Calendar, CalendarForm
+from django.views.generic import CreateView
 
 # Create your views here.
 
@@ -63,9 +64,11 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    form = CalendarForm(request.POST)
 
     context = {
         'product': product,
+        'form': form
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -137,3 +140,8 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+class CalendarCreateView(CreateView):
+    model = Calendar
+    form_class = CalendarForm

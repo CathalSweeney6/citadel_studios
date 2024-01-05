@@ -1,6 +1,7 @@
 from django import forms
 from .widgets import CustomClearableFileInput
-from .models import Product, Category
+from django.forms import ModelForm
+from .models import Product, Category, Calendar
 
 
 class ProductForm(forms.ModelForm):
@@ -19,3 +20,21 @@ class ProductForm(forms.ModelForm):
         self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
+
+
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+
+class CalendarForm(ModelForm):
+
+    class Meta:
+        model = Calendar
+        fields = ['date']
+        widgets = {
+            'date': forms.widgets.DateInput(attrs={'type': 'datetime-local'})
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(CalendarForm, self).__init__(*args, **kwargs)
+        self.fields['date'].label = ""
