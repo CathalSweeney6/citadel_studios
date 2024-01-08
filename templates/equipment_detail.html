@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block content %}
+{% load crispy_forms_tags %}
+{% load static %} 
+{% load account socialaccount %}
+
+<div class="masthead">
+    <br>
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <div>
+                    <br>
+                    <br>
+                </div>
+                <!-- Post title Area -->
+                <h1 class="equipment-title">{{ equipment.title }}</h1>
+                <!-- Post author Tag Area -->
+                <p class="equipment-subtitle">{{ equipment.author }} | {{ equipment.created_on }}</p>
+            </div>
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                <!--Featured image URL -->
+                {% if "placeholder" in equipment.image.url %}
+                <img src=" {{ equipment.image.url }}" alt="{{ equipment.title }}" class="w-100">
+                {% else %}
+                <img src=" {{ equipment.image.url }}" alt="{{ equipment.title }}" class="w-100">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left  top">
+            <div class="card-body">
+                <!-- Post Content Area -->
+                <div class="card-text ">
+                    {{ equipment.content | safe }}
+                </div>
+                <br>
+                <br>
+                <div class="row">
+
+
+{% endblock content %}
