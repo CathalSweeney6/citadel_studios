@@ -1,58 +1,58 @@
 [
-    {
-       "pk":1,
-       "model":"packages.product",
-       "fields":{
-          "sku":"pp5001340155",
-          "name":"Gold Package",
-          "description":"Our top-tier, two week studio package, gives the client full access to the entire studio and equipment. The ultimate gift or purchase for those who wish to record an album of their own and make their name known in the music industry!",
-          "price":2000,
-          "category":6,
-          "rating":5,
-          "image_url":"https://www.pexels.com/photo/a-close-up-shot-of-cymbals-7715639/",
-          "image":"gold.jpg"
-       }
-    },
-    {
-       "pk":2,
-       "model":"packages.product",
-       "fields":{
-          "sku":"pp5001600425",
-          "name":"Silver Package",
-          "description":"This package is a one-week studio experience, ideal for recording an EP, audiobook, etc. The Silver Package is the ideal package for those wanting to get used to the studio environment.",
-          "price":1000,
-          "category":4,
-          "rating":4.8,
-          "image_url":"https://www.pexels.com/photo/8-electric-guitars-hanged-on-brown-steel-bar-65718/",
-          "image":"silver.jpg"
-       }
-    },
-    {
-       "pk":3,
-       "model":"packages.product",
-       "fields":{
-          "sku":"pp5001730010",
-          "name":"Bronze Package",
-          "description":"Our basic package is a four-day studio experience for those with a keen interest in sound recording and engineering who would like to record their own song, or two, or who would like to gain experience in the field.",
-          "price":400,
-          "category":2,
-          "rating":4.6,
-          "image_url":"https://www.pexels.com/photo/black-and-gray-audio-mixer-3784221/",
-          "image":"bronze.jpg"
-       }
-    },
-    {
-      "pk":4,
+   {
+      "pk":1,
       "model":"packages.product",
       "fields":{
-         "sku":"pp5002761055",
-         "name":"Day Package",
-         "description":"Our day package is our most customisable package. Clients can choose to have a quick studio session or expand to various days, depending on their preferences.",
-         "price":100,
+         "sku":"pp5001340155",
+         "name":"Gold Package",
+         "description":"Our top-tier, two week studio package, gives the client full access to the entire studio and equipment. The ultimate gift or purchase for those who wish to record an album of their own and make their name known in the music industry!",
+         "price":2000,
          "category":1,
-         "rating":4.6,
-         "image_url":"https://www.pexels.com/photo/black-and-gray-microphone-164829/",
-         "image":"day-package.jpg"
+         "rating":5.0,
+         "image_url":"https://www.pexels.com/photo/a-close-up-shot-of-cymbals-7715639/",
+         "image":"gold.jpg"
       }
-   }
- ]
+   },
+   {
+      "pk":2,
+      "model":"packages.product",
+      "fields":{
+         "sku":"pp5001600425",
+         "name":"Silver Package",
+         "description":"This package is a one-week studio experience, ideal for recording an EP, audiobook, etc. The Silver Package is the ideal package for those wanting to get used to the studio environment.",
+         "price":1000,
+         "category":2,
+         "rating":4.8,
+         "image_url":"https://www.pexels.com/photo/8-electric-guitars-hanged-on-brown-steel-bar-65718/",
+         "image":"silver.jpg"
+      }
+   },
+   {
+      "pk":3,
+      "model":"packages.product",
+      "fields":{
+         "sku":"pp5001730010",
+         "name":"Bronze Package",
+         "description":"Our basic package is a four-day studio experience for those with a keen interest in sound recording and engineering who would like to record their own song, or two, or who would like to gain experience in the field.",
+         "price":400,
+         "category":3,
+         "rating":4.6,
+         "image_url":"https://www.pexels.com/photo/black-and-gray-audio-mixer-3784221/",
+         "image":"bronze.jpg"
+      }
+   },
+   {
+     "pk":4,
+     "model":"packages.product",
+     "fields":{
+        "sku":"pp5002761055",
+        "name":"Day Package",
+        "description":"Our day package is our most customisable package. Clients can choose to have a quick studio session or expand to various days, depending on their preferences.",
+        "price":100,
+        "category":4,
+        "rating":4.6,
+        "image_url":"https://www.pexels.com/photo/black-and-gray-microphone-164829/",
+        "image":"day-package.jpg"
+     }
+  }
+]

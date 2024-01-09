@@ -3,24 +3,24 @@
        "pk":1,
     "model":"packages.category",
        "fields":{
-          "name":"activewear",
-          "friendly_name":"Activewear"
+          "name":"album_recording",
+          "friendly_name":"Album Recording"
        }
     },
     {
        "pk":2,
     "model":"packages.category",
        "fields":{
-          "name":"bed_bath",
-          "friendly_name":"Bed & Bath"
+          "name":"one_week_recording",
+          "friendly_name":"One Week Recording"
        }
     },
     {
        "pk":3,
     "model":"packages.category",
        "fields":{
-          "name":"clearance",
-          "friendly_name":"Clearance"
+          "name":"four_day_recording",
+          "friendly_name":"Four Day Recording"
        }
     },
     {
@@ -29,46 +29,6 @@
        "fields":{
           "name":"deals",
           "friendly_name":"Deals"
-       }
-    },
-    {
-       "pk":5,
-    "model":"packages.category",
-       "fields":{
-          "name":"essentials",
-          "friendly_name":"Essentials"
-       }
-    },
-    {
-       "pk":6,
-    "model":"packages.category",
-       "fields":{
-          "name":"jeans",
-          "friendly_name":"Jeans"
-       }
-    },
-    {
-       "pk":7,
-    "model":"packages.category",
-       "fields":{
-          "name":"kitchen_dining",
-          "friendly_name":"Kitchen & Dining"
-       }
-    },
-    {
-       "pk":8,
-    "model":"packages.category",
-       "fields":{
-          "name":"new_arrivals",
-          "friendly_name":"New Arrivals"
-       }
-    },
-    {
-       "pk":9,
-    "model":"packages.category",
-       "fields":{
-          "name":"shirts",
-          "friendly_name":"Shirts"
        }
     }
  ]

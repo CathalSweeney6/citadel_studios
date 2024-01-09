@@ -2,6 +2,10 @@ html {
     height: 100%;
 }
 
+#citadel_studios {
+    font-family: 'Bungee', sans-serif;
+}
+
 body {
     background: url('/static/homepage_image.jpg') no-repeat center center fixed;
     background-size: cover;
