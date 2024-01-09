@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{% trans "Newsletter" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  </div>
+  <div class="row" style="text-align: center;"></div>
+  <div class="col-md-12 mt-6 d-flex justify-content-center text-center bg-black text-white" id="newsletter_box">
+      <form  id="contact_us" class="login" method="POST">
+      <br>
+    <h3>Subscribe to Our Newsletter!</h3>
+    <br>
+        {% csrf_token %}
+        {{ form | crispy }}
+    <br>
+    <br>
+        <button class="btn btn-contact" type="submit">Submit</button>
+      </form>
+    </div>
+  <br>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+
+{% block content %}
+
+<div class="container"></div>
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2" style="text-align: center ;">
+      {% csrf_token %}
+      <h3 class="alert alert-success"> {% trans "Thank You for Subscribing, Keep an Eye on Your Inbox!" %}</h3>
+  </div>
+  </div>
+{% endblock %}

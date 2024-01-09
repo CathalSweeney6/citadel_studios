@@ -259,6 +259,34 @@ input[name='q']::placeholder {
     color: lightgray;
 }
 
+.btn-contact {
+    background-color: #7d56fa;
+    color: #fff;
+    width: 200px;
+}
+
+.btn-contact:hover,
+.btn-contact:active {
+    background-color: #fff;
+    color: #7d56fa;
+}
+
+#contact_box {
+    margin-top: 250px;
+    height: 40rem;
+}
+
+#newsletter_box {
+    margin-top: 250px;
+    height: 20rem;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    margin-block: 15rem;
+}
 
 /* -------------------------------- Media Queries */
 
