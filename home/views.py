@@ -12,6 +12,13 @@ def index(request):
 
     return render(request, 'home/index.html')
 
+
+def about_us(request):
+    """ A view to return the about us page """
+
+    return render(request, 'about_us.html')
+
+
 def contact(request):
     form = ContactForm()
     if request.method == 'POST':

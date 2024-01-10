@@ -7,6 +7,7 @@ from .models import Contact
 
 urlpatterns = [
     path('', views.index, name='home'),
+    path('about_us', views.about_us, name="about_us"),
     path('contact', views.contact, name="contact"),
     path('success', views.success, name="success"),
     path('newsletter', views.newsletter, name="newsletter"),
