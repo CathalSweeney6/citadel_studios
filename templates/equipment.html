@@ -8,11 +8,15 @@
         <!-- Blog Entries Column -->
         
         <div class="col-12 mt-3 left">
+
+    <div class="col-md-12 mt-6 card-body bg-white text-center text-black" id="eq_tag">
+        <h3>STUDIO EQUIPMENT</h3>
+    </div>
+
             <div class="row">
-                
                 {% for equipment in equipment_list %}
                 <div class="col-md-4">
-                    <div class="card mb-4">
+                    <div class="card mb-2">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in equipment.image.url %}

@@ -182,13 +182,18 @@ input[name='q']::placeholder {
 .card {
     border: none;
     background-color: white;
-        margin-block: 10rem;
+    margin-top: 60px;
 }
 
 .card-img-top {
     width: 100%;
     height: auto;
 }
+
+#eq_tag {
+    margin-top: 160px;
+}
+
 
 .image-container {
     position: relative;
@@ -198,7 +203,7 @@ input[name='q']::placeholder {
     position: absolute;
     bottom: 5%;
     min-width: 30%;
-    left: -2px;
+    left: 3px;
     background-color: #7d56fa;
     border-radius: 25px;
 }
