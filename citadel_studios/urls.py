@@ -29,6 +29,7 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('equipment/', include('equipment.urls')),
+    path('clients/', include('clients.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'citadel_studios.views.handler404'

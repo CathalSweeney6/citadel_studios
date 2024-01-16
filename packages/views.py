@@ -3,9 +3,13 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.views.generic.edit import UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
 
-from .models import Product, Category, Calendar
-from .forms import ProductForm, Calendar, CalendarForm
+from .models import Product, Category, Calendar, Review
+from .forms import ProductForm, Calendar, CalendarForm, ReviewForm
 from django.views.generic import CreateView
 
 # Create your views here.
@@ -65,11 +69,27 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     form = CalendarForm(request.POST)
+    review = product.reviews.all()
+    rating = request.POST.get('rating', 10)
+
+    review_form = ReviewForm(data=request.POST)
+    if review_form.is_valid():
+        review_form.instance.email = request.user.email
+        review_form.instance.name = request.user.username
+        review = review_form.save(commit=False)
+        review.product = product
+        review.save()
+    else:
+        review_form = ReviewForm()
 
     context = {
         'product': product,
-        'form': form
+        'form': form,
+        "reviewed": False,
+        "review_form": ReviewForm(),
+        "review": review,
     }
+    
 
     return render(request, 'products/product_detail.html', context)
 
@@ -104,7 +124,7 @@ def add_product(request):
 def edit_product(request, product_id):
     """ Edit a product in the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, only studio owners can do that.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -133,7 +153,7 @@ def edit_product(request, product_id):
 def delete_product(request, product_id):
     """ Delete a product from the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, only studio owners can do that.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -145,3 +165,26 @@ def delete_product(request, product_id):
 class CalendarCreateView(CreateView):
     model = Calendar
     form_class = CalendarForm
+
+# View for deleting a review as Site User
+@login_required
+def delete_user_review(request, review_id):
+    """ Delete review
+    """
+    review = get_object_or_404(Review, id=review_id)
+    review.delete()
+    messages.success(request, 'Your review was deleted successfully')
+    return HttpResponseRedirect(reverse(
+        'article_detail', args=[review.article.slug]))
+
+# View for editing a review as Site User
+
+
+class EditReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    """
+    Edit review
+    """
+    model = Review
+    template_name = 'edit_user_review.html'
+    form_class = ReviewForm
+    success_message = 'Your review was successfully updated!'

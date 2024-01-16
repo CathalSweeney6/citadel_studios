@@ -1,7 +1,7 @@
 from django import forms
 from .widgets import CustomClearableFileInput
 from django.forms import ModelForm
-from .models import Product, Category, Calendar
+from .models import Product, Category, Calendar, Review
 
 
 class ProductForm(forms.ModelForm):
@@ -38,3 +38,11 @@ class CalendarForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(CalendarForm, self).__init__(*args, **kwargs)
         self.fields['date'].label = ""
+
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ('name', 'rating', 'body',)
+

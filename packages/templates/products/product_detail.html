@@ -116,7 +116,103 @@
             </div>
         </div>
     </div>
-{% endblock %}
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <h3>Reviews:</h3>
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                <br>
+                {% else %}
+                <div>
+                     <strong> To leave a review of a product, please <a class="link" href="{% url 'account_login' %}">sign in</a>, or <a class="link" href="{% url 'account_signup' %}">sign up</a>. </strong>
+                </div>
+                <br>
+                {% endif %}
+                <!-- For Loop Area -->
+                {% for review in reviews %}
+                <div class="reviews" style="padding: 10px;">
+                    <p class="font-weight-bold">
+                        <!-- Reviewer Name Area -->
+                        {{ review.name }}
+                        <span class=" text-muted font-weight-normal">
+                            <!-- Review Published Date Area -->
+                            {{ review.created_on }}
+                        </span>'s review':
+                    </p>
+                     <!-- Review Rating Area -->
+                     <p>Rating:</p>
+                     <select name="rating" id="product_rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10" selected>10</option>
+                     </select>
+                    <!-- Review Body Area -->
+                    {{ review.body | linebreaks }}
+                </div>
+                <!-- Edits or Deletes User Reviews  -->
+                {% if user.is_authenticated and user.username == review.name or user.is_superuser %}
+                <a href="{% url 'edit_user_review' review.id %}" class="link" aria-label="Go to the Edit Reviews Page">Edit &emsp;</a>
+                <a href="" type="submit" class="link" data-bs-toggle="modal" data-bs-target="#delete-review">Delete</a>
+                <br><br>
+                    <!-- Bootstrap modal to Delete Review -->
+                <div class="modal" id="delete-review" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Delete Review</h5>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Your review will be permanently deleted, are you sure?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="{% url 'delete_user_review' review.pk %}" class="btn btn-primary" aria-label="Delete review">Delete</a>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                {% if user.is_authenticated and user.username != review.name %}
+                <br>
+                {% else %}
+                {% endif %}
+                {% endif %}
+                {% endfor%}
+            </div>
+        </div>
+        <!-- reviewing Area -->
+        <div class="col-md-4 card mb-4  mt-3 ">
+            <div class="card-body">
+                {% if reviewed %}
+                <div class="alert alert-success" role="alert">
+                    Your review is awaiting approval! 
+                </div>
+                {% else %}
+                {% if user.is_authenticated %}
+
+                <h3>Leave a review:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ review_form | crispy }}
+                    {% csrf_token %}
+                    <button class="btn btn-signup right" type="submit">Submit</button>
+                </form>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+
+{% endblock content %}
 
 {% block postloadjs %}
 {{ block.super }}

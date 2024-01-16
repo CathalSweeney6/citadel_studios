@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Category(models.Model):
@@ -35,3 +36,29 @@ class Calendar(models.Model):
     title = models.CharField(max_length=300)
     description = models.TextField(blank=True)
     date = models.DateField()
+
+class Review(models.Model):
+    product = models.ForeignKey(
+        Product, on_delete=models.CASCADE, related_name="reviews")
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    rating = models.IntegerField(
+    default=10,
+    validators=[
+        MaxValueValidator(10),
+        MinValueValidator(1)
+        ]
+    )
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False) 
+
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Review {self.body} by {self.name}"
+
+    def get_absolute_url(self):
+        """Sets absolute URL"""
+        return reverse('product_detail', args=[self.product.slug])

@@ -1,22 +1,22 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Equipment
+from .models import Clients
 
 
 # View for list of posts on home page
 
 
-class EquipmentList(generic.ListView):
-    model = Equipment
-    queryset = Equipment.objects.filter(status=1).order_by("-created_on")
-    template_name = "equipment.html"
+class ClientsList(generic.ListView):
+    model = Clients
+    queryset = Clients.objects.filter(status=1).order_by("-created_on")
+    template_name = "clients.html"
     paginate_by = 6
 
 # View for full post in detail
 
 
-class EquipmentDetail(View):
+class ClientsDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Equipment.objects.filter(status=1)
@@ -24,9 +24,9 @@ class EquipmentDetail(View):
 
         return render(
             request,
-            "equipment_detail.html",
+            "clients_detail.html",
             {
-                "equipment": equipment
+                "clients": clients
             },
         )
 
@@ -38,8 +38,8 @@ class EquipmentDetail(View):
 
         return render(
             request,
-            "equipment_detail.html",
+            "clients_detail.html",
             {
-                "equipment": equipment
+                "clients": clients
             },
         )

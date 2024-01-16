@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+{% load crispy_forms_tags %}
+{% load account socialaccount %}
+
+<!-- Edit Review Form Area-->
+<br>
+<br>
+<div class="container-fluid" style="text-align: center;">
+    <div class="row">
+        <h2>Edit Review</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-signup right" type="submit">Update Review</button>
+        </form>
+    </div>
+</div>
+<br>
+
+{% endblock %}
