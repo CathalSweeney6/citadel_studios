@@ -130,7 +130,7 @@
                 {% endif %}
                 <!-- For Loop Area -->
                 {% for review in reviews %}
-                <div class="reviews" style="padding: 10px;">
+                <div class="card-body" style="padding: 10px;">
                     <p class="font-weight-bold">
                         <!-- Reviewer Name Area -->
                         {{ review.name }}
@@ -141,7 +141,9 @@
                     </p>
                      <!-- Review Rating Area -->
                      <p>Rating:</p>
-                     <select name="rating" id="product_rating">
+                     <div class="dropdown">
+                        <label for="ratings">Please Choose from 1-10</option>
+                        <select class="dropbtn"name="ratings" id="ratings"></select>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -151,8 +153,10 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10" selected>10</option>
-                     </select>
+                        <option value="10">10</option>
+                        </select>
+                        </div>
+                      
                     <!-- Review Body Area -->
                     {{ review.body | linebreaks }}
                 </div>

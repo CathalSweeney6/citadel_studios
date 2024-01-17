@@ -40,9 +40,21 @@ class CalendarForm(ModelForm):
         self.fields['date'].label = ""
 
 
+RATING= [
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5'),
+    ('6', '6'),
+    ('7', '7'),
+    ('8', '8'),
+    ('9', '9'),
+    ('10', '10'),
+    ]
 
 class ReviewForm(forms.ModelForm):
+    rating = forms.ChoiceField(choices=RATING, widget=forms.Select(attrs={'class': 'dropbtn'}))
     class Meta:
         model = Review
         fields = ('name', 'rating', 'body',)
-

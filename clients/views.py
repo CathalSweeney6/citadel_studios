@@ -19,8 +19,8 @@ class ClientsList(generic.ListView):
 class ClientsDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Equipment.objects.filter(status=1)
-        equipment = get_object_or_404(queryset, slug=slug)
+        queryset = Clients.objects.filter(status=1)
+        clients = get_object_or_404(queryset, slug=slug)
 
         return render(
             request,
