@@ -311,6 +311,10 @@ input[name='q']::placeholder {
     height: 20rem;
 }
 
+#about_box {
+    margin-top: 160px;
+    height: 22rem;
+}
 .alert-success {
     color: #155724;
     background-color: #d4edda;
@@ -318,6 +322,21 @@ input[name='q']::placeholder {
     margin-block: 15rem;
 }
 
+.Site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  .Site-content {
+    flex: 1;
+  }
+  
+  .footer {
+    position: relative;
+    height: 80px;
+  }
+  
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

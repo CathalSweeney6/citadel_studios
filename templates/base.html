@@ -39,7 +39,8 @@
 
     <title>Citadel Studios {% block extra_title %}{% endblock %}</title>
   </head>
-  <body>
+  <body class="Site">
+    <main class="Site-content">
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-black pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -89,7 +90,7 @@
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
+                                    €{{ grand_total|floatformat:2 }}
                                     {% else %}
                                     €0.00
                                     {% endif %}
@@ -145,11 +146,18 @@
         $('.toast').toast('show');
     </script>
     {% endblock %}
-
-    <footer class="footer mt-auto py-3 bg-black">
+    </main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer class="footer mt-auto py-6 bg-black">
         <p class="m-0 text-center text-white">Follow us on Facebook:</p>
         <p class="m-0 text-center text-white">
             <a aria-label="facebook" href="https://www.facebook.com/" class="text-white facebook" target="_blank"><i class="fab fa-facebook-square ms-3"></i></a>
+            <br>
+            <a class="text-white" aria-label="map" style="text-decoration:none;" href="https://www.google.com/maps/place/Ardmalin,+Malin+Head,+Co.+Donegal/@55.3791849,-7.3434329,14z/data=!4m6!3m5!1s0x488aab9dce9647e3:0x1800c7a937df6c20!8m2!3d55.3820014!4d-7.3733878!16zL20vMDQxeGhj?source=lnms" target="_blank"><i class="fa-solid fa-location-dot"></i> Citadel Studios - Malin Head, Co. Donegal</a>
     </footer>
 
     

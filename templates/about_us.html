@@ -13,8 +13,22 @@
 <div class="card-body bg-white text-center text-black">
     <h3>About Us </h3>
 </div>
-<div class="col-md-12 mt-6 d-flex justify-content-center bg-white text-center text-black">
-    <strong>Citadel Studios was founded in 2023 and situated at the very top of Ireland, in a refurbished Fort in Malin Head. <br> We provide recording space and services for... </strong>
-    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9066.497162620733!2d-7.383687516149581!3d55.382012657374226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x488aab9dce9647e3%3A0x1800c7a937df6c20!2sArdmalin%2C%20Malin%20Head%2C%20Co.%20Donegal!5e0!3m2!1sen!2sie!4v1705022493349!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div class="col-md-12 mt-6 d-flex justify-content-center bg-black text-center text-white text-uppercase"  id="about_box">
+    <strong>Citadel Studios was founded in 2023 and situated at the very top of Ireland, in a refurbished Fort in Malin Head. <br> We provide recording space and services for... <br>
+       <br>
+        <ul>
+            <li>Album / EP Recording</li>
+            <li>Single Recording</li>
+            <li>Audiobook / Narration Recording</li>
+            <li>Audio Advertisement Recording</li>
+          </ul>  
+        <br>
+        <p>If you have any queries regarding booking, please</p>
+        <br>
+        <a href="{% url 'contact' %}" class="btn btn-contact text-uppercase" type="submit">Contact Us</a>
+        <br>
+        <br>
+    </strong>
+      
 </div>
 {% endblock %}
