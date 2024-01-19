@@ -14,6 +14,7 @@
     {% endblock %}
 
     {% block corecss %}
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}" >
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -153,12 +154,12 @@
     <br>
     <br>
     <footer class="footer mt-auto py-6 bg-black">
-        <p class="m-0 text-center text-white">Follow us on Facebook:</p>
-        <p class="m-0 text-center text-white">
+        <p class="m-0 text-center" style="font-size: 40px;">
             <a aria-label="facebook" href="https://www.facebook.com/" class="text-white facebook" target="_blank"><i class="fab fa-facebook-square ms-3"></i></a>
-            <br>
-            <a class="text-white" aria-label="map" style="text-decoration:none;" href="https://www.google.com/maps/place/Ardmalin,+Malin+Head,+Co.+Donegal/@55.3791849,-7.3434329,14z/data=!4m6!3m5!1s0x488aab9dce9647e3:0x1800c7a937df6c20!8m2!3d55.3820014!4d-7.3733878!16zL20vMDQxeGhj?source=lnms" target="_blank"><i class="fa-solid fa-location-dot"></i> Citadel Studios - Malin Head, Co. Donegal</a>
-    </footer>
+            <a>|</a>
+            <a class="text-white" aria-label="maps" href="https://www.google.com/maps/place/Ardmalin,+Malin+Head,+Co.+Donegal/@55.3791849,-7.3434329,14z/data=!4m6!3m5!1s0x488aab9dce9647e3:0x1800c7a937df6c20!8m2!3d55.3820014!4d-7.3733878!16zL20vMDQxeGhj?source=lnms"  target="_blank"> <i class="fa-solid fa-location-dot"></i></a>
+        </p>
+        </footer>
 
     
   </body>
