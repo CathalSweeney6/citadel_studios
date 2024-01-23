@@ -8,8 +8,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 
-from .models import Product, Category, Calendar, Review
-from .forms import ProductForm, Calendar, CalendarForm, ReviewForm
+from .models import Product, Category, Calendar, Review, Time
+from .forms import ProductForm, Calendar, CalendarForm, ReviewForm, TimeForm
 from django.views.generic import CreateView
 
 # Create your views here.
@@ -165,6 +165,8 @@ def delete_product(request, product_id):
 class CalendarCreateView(CreateView):
     model = Calendar
     form_class = CalendarForm
+    
+
 
 # View for deleting a review as Site User
 @login_required

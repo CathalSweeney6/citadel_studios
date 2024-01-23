@@ -1,7 +1,7 @@
 from django import forms
 from .widgets import CustomClearableFileInput
 from django.forms import ModelForm
-from .models import Product, Category, Calendar, Review
+from .models import Product, Category, Calendar, Review, Time
 
 
 class ProductForm(forms.ModelForm):
@@ -32,7 +32,7 @@ class CalendarForm(ModelForm):
         model = Calendar
         fields = ['date']
         widgets = {
-            'date': forms.widgets.DateInput(attrs={'type': 'datetime-local'})
+            'date': forms.widgets.DateInput(attrs={'type': 'date'})
         }
 
     def __init__(self, *args, **kwargs):
@@ -58,3 +58,33 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ('name', 'rating', 'body',)
+
+
+TIME= [
+    ('10:00', '10:00'),
+    ('11:00', '11:00'),
+    ('12:00', '12:00'),
+    ('13:00', '13:00'),
+    ('14:00', '14:00'),
+    ('15:00', '15:00'),
+    ('16:00', '16:00'),
+    ('17:00', '17:00'),
+    ('18:00', '18:00'),
+    ('19:00', '19:00'),
+    ('20:00', '20:00'),
+    ('20:00', '20:00'),
+    ('21:00', '21:00'),
+    ]
+
+class TimeForm(ModelForm):
+
+    class Meta:
+        model = Time
+        fields = ['time']
+        widgets = {
+            'time': forms.widgets.DateInput(attrs={'type': 'time'})
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(CalendarForm, self).__init__(*args, **kwargs)
+        self.fields['time'].label = ""

@@ -37,6 +37,7 @@ class Calendar(models.Model):
     description = models.TextField(blank=True)
     date = models.DateField()
 
+
 class Review(models.Model):
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name="reviews")
@@ -62,3 +63,18 @@ class Review(models.Model):
     def get_absolute_url(self):
         """Sets absolute URL"""
         return reverse('product_detail', args=[self.product.slug])
+
+
+class Time(models.Model):
+    product = models.ForeignKey(
+        Product, on_delete=models.CASCADE, related_name="time")
+    time = models.IntegerField(
+    default='--:--',
+    validators=[
+        MaxValueValidator(21),
+        MinValueValidator(10)
+        ]
+    )
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False) 
