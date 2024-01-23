@@ -73,6 +73,7 @@ def product_detail(request, product_id):
     rating = request.POST.get('rating', 10)
 
     review_form = ReviewForm(data=request.POST)
+    print(review)
     if review_form.is_valid():
         review_form.instance.email = request.user.email
         review_form.instance.name = request.user.username

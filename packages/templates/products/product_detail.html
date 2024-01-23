@@ -54,6 +54,7 @@
                         <div class="form-row">
                             {% with product.has_sizes as s %}
                             {% if s %}
+                        </form>
                                 <div class="col-12">
                                     <p><strong>Size:</strong></p>
                                     <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
@@ -63,30 +64,31 @@
                                         <option value="l">L</option>
                                         <option value="xl">XL</option>
                                     </select>
+                                    </form>
                                 </div>
                             {% endif %}
                             <div class="col-12">
                                 <p class="mt-3"><strong>Quantity:</strong></p>
                                 <div class="form-group w-50">
-                                    <div class="input-group input-group-{{ product.id }}">
-                                        <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-black rounded-0 decrement-qty_{{ product.id }}" 
+                                </form>
+                                <div class="input-group input-group-{{ product.id }}">
+                                    <div class="input-group-prepend">
+                                        <button class="decrement-qty btn btn-black rounded-0 decrement-qty_{{ product.id }}" 
                                             data-item_id="{{ product.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-minus"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                        <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
-                                            name="quantity" value="1" min="1" max="99"
-                                            data-item_id="{{ product.id }}"
+                                            <span class="icon">
+                                                <i class="fas fa-minus"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
+                                        name="quantity" value="1" min="1" max="99"
+                                        data-item_id="{{ product.id }}">
+                                    <div class="input-group-append">
+                                        <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
                                             data-item_id="{{ product.id }}">
-                                        <div class="input-group-append">
-                                            <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
-                                            data-item_id="{{ product.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-plus"></i>
-                                                </span>
+                                            <span class="icon">
+                                                <i class="fas fa-plus"></i>
+                                            </span>
                                             </button>
                                         </div>
                                     </div>
@@ -95,8 +97,8 @@
 
                             {% csrf_token %}
                                 <p class="mt-3"><strong>Date & Time:</strong></p>
-                                <input type="date" value="yyyy-mm-dd" min="2024-01-22" max="3094-01-01"/>
-                                    <select class="dropbtn"name="time" id="time">
+                                <input type="date" name="date" value="yyyy-mm-dd" min="2024-01-22" max="3094-01-01" required/>
+                                    <select class="dropbtn"name="time" id="time" required>
                                     <option value="10:00">10:00</option>
                                     <option value="11:00">11:00</option>
                                     <option value="12:00">12:00</option>
@@ -223,7 +225,7 @@
                                         <form method="post" style="margin-top: 1.3em;">
                                             {{ review_form | crispy }}
                                             {% csrf_token %}
-                                            <button class="btn btn-signup right" type="submit">Submit</button>
+                                            <button class="shop-now-button btn" type="submit">Submit</button>
                                         </form>
                                         {% endif %}
                                         {% endif %}
@@ -231,7 +233,6 @@
                                 </div>
                             {% endwith %}
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
