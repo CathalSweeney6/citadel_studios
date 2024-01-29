@@ -27,16 +27,16 @@ def add_to_bag(request, item_id):
         if item_id in bag.keys():
             if date in bag[item_id]['dates'].keys() and time in bag[item_id]['dates'][date]['times'].keys():
                 bag[item_id]['dates'][date]['times'][time] += quantity
-                messages.success(request, f'Updated {product.name} quantity to {bag[item_id]["dates"][date]["times"][time]} on {date} at {time}')
+                messages.success(request, f'Updated {product.name} quantity to {bag[item_id]["dates"][date]["times"][time]} for {date} at {time}')
             else:
                 if date not in bag[item_id]['dates'].keys():
                     bag[item_id]['dates'][date] = {'times': {time: quantity}}
                 else:
                     bag[item_id]['dates'][date]['times'][time] = quantity
-                messages.success(request, f'Added {product.name} to your bag on {date} at {time}')
+                messages.success(request, f'Added {product.name} to your bag for {date} at {time}')
         else:
             bag[item_id] = {'dates': {date: {'times': {time: quantity}}}}
-            messages.success(request, f'Added {product.name} to your bag on {date} at {time}')
+            messages.success(request, f'Added {product.name} to your bag for {date} at {time}')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -52,26 +52,6 @@ def adjust_bag(request, item_id):
         size = request.POST['product_size']
     bag = request.session.get('bag', {})
 
-    if size:
-        if quantity > 0:
-            bag[item_id]['items_by_size'][size] = quantity
-            messages.success(request, f'Updated size {size.upper()} {product.name} quantity to {bag[item_id]["items_by_size"][size]}')
-        else:
-            del bag[item_id]['items_by_size'][size]
-            if not bag[item_id]['items_by_size']:
-                bag.pop(item_id)
-            messages.success(request, f'Removed size {size.upper()} {product.name} from your bag')
-    else:
-        if quantity > 0:
-            bag[item_id] = quantity
-            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
-        else:
-            bag.pop(item_id)
-            messages.success(request, f'Removed {product.name} from your bag')
-
-    request.session['bag'] = bag
-    return redirect(reverse('view_bag'))
-
 
 def remove_from_bag(request, item_id):
     """Remove the item from the shopping bag"""
@@ -84,8 +64,8 @@ def remove_from_bag(request, item_id):
         bag = request.session.get('bag', {})
 
         if size:
-            del bag[item_id]['items_by_size'][size]
-            if not bag[item_id]['items_by_size']:
+            del bag[item_id]
+            if not bag[item_id]:
                 bag.pop(item_id)
             messages.success(request, f'Removed size {size.upper()} {product.name} from your bag')
         else:
