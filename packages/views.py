@@ -66,28 +66,29 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-
+    reviewed = False
     product = get_object_or_404(Product, pk=product_id)
     form = CalendarForm(request.POST)
     review = product.reviews.all()
     rating = request.POST.get('rating', 10)
 
     review_form = ReviewForm(data=request.POST)
-    print(review)
     if review_form.is_valid():
         review_form.instance.email = request.user.email
         review_form.instance.name = request.user.username
         review = review_form.save(commit=False)
         review.product = product
         review.save()
+        reviewed = True
+        print(f'reviewed: {reviewed}')
     else:
         review_form = ReviewForm()
 
     context = {
         'product': product,
         'form': form,
-        "reviewed": False,
         "review_form": ReviewForm(),
+        "reviewed": reviewed,
         "review": review,
     }
     
