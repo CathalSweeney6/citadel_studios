@@ -7,6 +7,7 @@ from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 
 from .models import Product, Category, Calendar, Review, Time
 from .forms import ProductForm, Calendar, CalendarForm, ReviewForm, TimeForm
@@ -72,15 +73,19 @@ def product_detail(request, product_id):
     review = product.reviews.all()
     rating = request.POST.get('rating', 10)
 
+    print('REVIEW before valid: ', review)
+
+
     review_form = ReviewForm(data=request.POST)
     if review_form.is_valid():
         review_form.instance.email = request.user.email
         review_form.instance.name = request.user.username
-        review = review_form.save(commit=False)
-        review.product = product
-        review.save()
+        r = review_form.save(commit=False)
+        r.product = product
+        r.save()
         reviewed = True
         print(f'reviewed: {reviewed}')
+        print('REVIEW after valid: ', review)
     else:
         review_form = ReviewForm()
 
@@ -175,11 +180,12 @@ class CalendarCreateView(CreateView):
 def delete_user_review(request, review_id):
     """ Delete review
     """
-    review = get_object_or_404(Review, id=review_id)
+    eview = get_object_or_404(Review, id=review_id)
+    product_id = review.product.id
     review.delete()
-    messages.success(request, 'Your review was deleted successfully')
+    messages.success(request, 'Your review was deleted successfully!')
     return HttpResponseRedirect(reverse(
-        'article_detail', args=[review.article.slug]))
+'product_detail', args=[product_id]))
 
 # View for editing a review as Site User
 
@@ -189,6 +195,6 @@ class EditReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     Edit review
     """
     model = Review
-    template_name = 'edit_user_review.html'
+    template_name = 'products/edit_user_review.html'
     form_class = ReviewForm
     success_message = 'Your review was successfully updated!'

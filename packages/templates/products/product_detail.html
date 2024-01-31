@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -149,15 +150,16 @@
                         <br>
                         {% endif %}
                         <!-- For Loop Area -->
-                        {% for review in reviews %}
+                        {% for r in review %}
                         <div class="card-body" style="padding: 10px;">
                             <p class="font-weight-bold">
                                 <!-- Reviewer Name Area -->
-                                {{ review.name }}
+                                {{ r.name }}
                                 <span class=" text-muted font-weight-normal">
                                     <!-- Review Published Date Area -->
-                                    {{ review.created_on }}
-                                </span>'s review':
+                                    reviewed on
+                                    {{ r.created_on }}
+                                </span>:
                             </p>
                             <!-- Review Rating Area -->
                             <p>Rating:</p>
@@ -177,40 +179,35 @@
 
 
                                 <!-- Review Body Area -->
-                                {{ review.body | linebreaks }}
+                                {{ r.body | linebreaks }}
                             </div>
                             <!-- Edits or Deletes User Reviews  -->
-                            {% if user.is_authenticated and user.username == review.name or user.is_superuser %}
-                            <a href="{% url 'edit_user_review' review.id %}" class="link"
+                            {% if user.is_authenticated and user.username == r.name or user.is_superuser %}
+                            <a href="{% url 'edit_user_review' r.id %}" class="link"
                                 aria-label="Go to the Edit Reviews Page">Edit &emsp;</a>
-                            <a href="" type="submit" class="link" data-bs-toggle="modal"
-                                data-bs-target="#delete-review">Delete</a>
+                            <button type="button" class="link" data-toggle="modal"
+                                data-target="#delete-review">Delete</button>
                             <br><br>
                             <!-- Bootstrap modal to Delete Review -->
-                            <div class="modal" id="delete-review" tabindex="-1" role="dialog">
+                            <div class="modal fade" id="delete-review" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Delete Review</h5>
-                                            <button type="button" class="close" data-bs-dismiss="modal"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title">Delete Review</h5>
+                                      <div class="modal-body">
+                                        <p>Your review will be permanently deleted, are you sure?</p>
                                         </div>
-                                        <div class="modal-body">
-                                            <p>Your review will be permanently deleted, are you sure?</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="{% url 'delete_user_review' review.pk %}" class="btn btn-primary"
-                                                aria-label="Delete review">Delete</a>
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close</button>
-                                        </div>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     </div>
+                                    <div class="modal-footer">
+                                      <a href="{% url 'delete_user_review' r.id %}" type="button" class="btn btn-primary" aria-label="Delete review">Delete</a>
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
                                 </div>
-                            </div>
+                              </div>
                             {% else %}
-                            {% if user.is_authenticated and user.username != review.name %}
+                            {% if user.is_authenticated and user.username != r.name %}
                             <br>
                             {% else %}
                             {% endif %}
