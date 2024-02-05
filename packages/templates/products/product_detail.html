@@ -162,25 +162,13 @@
                                 </span>:
                             </p>
                             <!-- Review Rating Area -->
-                            <p>Rating:</p>
-                            <div class="dropdown">
-                                <select class="dropbtn" name="ratings" id="ratings">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                </select>
+                            <p>Rating: {{r.rating}}</p>
+
 
 
                                 <!-- Review Body Area -->
                                 {{ r.body | linebreaks }}
-                            </div>
+                            <!-- </div> -->
                             <!-- Edits or Deletes User Reviews  -->
                             {% if user.is_authenticated and user.username == r.name or user.is_superuser %}
                             <a href="{% url 'edit_user_review' r.id %}" class="link"

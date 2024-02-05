@@ -180,7 +180,7 @@ class CalendarCreateView(CreateView):
 def delete_user_review(request, review_id):
     """ Delete review
     """
-    eview = get_object_or_404(Review, id=review_id)
+    review = get_object_or_404(Review, id=review_id)
     product_id = review.product.id
     review.delete()
     messages.success(request, 'Your review was deleted successfully!')
@@ -189,12 +189,19 @@ def delete_user_review(request, review_id):
 
 # View for editing a review as Site User
 
+@login_required
+def edit_user_review(request, review_id):
+    """ Edit review
+    """
+    review = get_object_or_404(Review, id=review_id)
 
-class EditReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    """
-    Edit review
-    """
-    model = Review
-    template_name = 'products/edit_user_review.html'
-    form_class = ReviewForm
-    success_message = 'Your review was successfully updated!'
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your review was edited successfully!')
+            return HttpResponseRedirect(reverse('product_detail', args=[review.product.id]))
+    else:
+        form = ReviewForm(instance=review)
+
+    return render(request, 'products/edit_user_review.html', {'form': form, 'review': review})

@@ -60,9 +60,9 @@ class Review(models.Model):
     def __str__(self):
         return f"Review {self.body} by {self.name}"
 
-    def get_absolute_url(self):
-        """Sets absolute URL"""
-        return reverse('product_detail', args=[self.product.slug])
+    # def get_absolute_url(self):
+    #     """Sets absolute URL"""
+    #     return reverse('product_detail', args=[self.product.slug])
 
 
 class Time(models.Model):

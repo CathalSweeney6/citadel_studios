@@ -5,16 +5,15 @@
 <!-- Edit Review Form Area-->
 <br>
 <br>
-<div class="container-fluid" style="text-align: center;">
-    <div class="row">
+<div class="row" style="text-align: center;"></div>
+<div class="col-md-12 mt-6 d-flex justify-content-center text-center bg-black text-white" id="contact_box">
         <h2>Edit Review</h2>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <button class="btn btn-signup right" type="submit">Update Review</button>
+            <button class="btn btn-contact" type="submit">Update Review</button>
         </form>
     </div>
-</div>
 <br>
 
 {% endblock %}
