@@ -314,6 +314,7 @@ input[name='q']::placeholder {
 #about_box {
     margin-top: 160px;
     height: 22rem;
+    padding: 1rem;
 }
 .alert-success {
     color: #155724;
@@ -337,6 +338,10 @@ input[name='q']::placeholder {
     height: 60px;
   }
   
+  label[for="id_body"] {
+    display: none;
+ }
+ 
   
 /* -------------------------------- Media Queries */
 
