@@ -259,7 +259,7 @@ input[name='q']::placeholder {
 }
 
 .equipment-title {
-    margin-top: 20%;
+    margin-top: 8%;
     margin-left: 5%;
 }
 
@@ -280,7 +280,7 @@ input[name='q']::placeholder {
 }
 
 .clients-title {
-    margin-top: 20%;
+    margin-top: 8%;
     margin-left: 5%;
 }
 
@@ -520,12 +520,37 @@ input[name='q']::placeholder {
         margin-left: 1rem;
     }
 }
-    
+
+@media (max-width: 630px) {
+    #about_box {
+        height: 28rem;
+    }
+    }
+
+@media (max-width: 428px) {
+    .equipment-title {
+    margin-top: 10%;
+}   
+
+
+.clients-title {
+    margin-top: 10%;
+}
+
+
+#about_box {
+    height: 28rem;
+}
+}
+
+
+
 @media (max-width: 425px) {
     #about_box {
         height: 30rem;
     }
     }
+
 
 @media (max-width: 375px) {
     #about_box {

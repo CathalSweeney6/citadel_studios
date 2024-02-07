@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/bag/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/packages/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/about_us</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/equipment/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/clients/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/contact</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/newsletter</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/packages/1/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/packages/?category=album_recording</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/packages/2/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/packages/?category=one_week_recording</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/packages/3/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/packages/?category=four_day_recording</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/packages/4/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/packages/?category=deals</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/equipment/recording-equipment/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/equipment/recording-software/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/equipment/pianos-keys-synths/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/equipment/drums/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/equipment/bass/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/equipment/guitars/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/clients/mardy-bums/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/clients/dragons-lair/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://citadel-studios-d7f21bf416bb.herokuapp.com/clients/brass-boutique/</loc>
+  <lastmod>2024-02-07T12:13:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
