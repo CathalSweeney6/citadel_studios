@@ -70,4 +70,7 @@
        $(allQuantityInputs).val(currentValue - 1);
        handleEnableDisable(itemId, size);
     });
+
+    // Datepicker - Cancels out previous dates
+    document.getElementById("date").min = new Date().toISOString().split("T")[0];
 </script>

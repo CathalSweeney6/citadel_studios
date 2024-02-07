@@ -86,7 +86,7 @@
 
                     {% csrf_token %}
                     <p class="mt-3"><strong>Date & Time:</strong></p>
-                    <input type="date" name="date" value="yyyy-mm-dd" min="2024-01-22" max="3094-01-01" required />
+                    <input id="date" type='date' name="date" value="yyyy-mm-dd" required></input>
                     <select class="dropbtn" name="time" id="time" required style="height: 30.5px;">
                         <option value="10:00">10:00</option>
                         <option value="11:00">11:00</option>
@@ -121,97 +121,102 @@
                         </div>
                     </div>
                     <div class="row reviews_section" style="margin-top: 35px;">
-                    <h3>Reviews:</h3>
-                    <div class="card-body">
-                        {% if user.is_authenticated %}
-                        <br>
-                        {% else %}
-                        <div>
-                            <strong> To leave a review of a product, please <a class="link"
-                                    href="{% url 'account_login' %}">sign in</a>, or <a class="link"
-                                    href="{% url 'account_signup' %}">sign up</a>. </strong>
-                        </div>
-                        <br>
-                        {% endif %}
-                        <!-- For Loop Area -->
-                        {% for r in review %}
-                        <div class="card-body" style="padding: 10px;">
-                            <p class="font-weight-bold">
-                                <!-- Reviewer Name Area -->
-                                {{ r.name }}
-                                <span class=" text-muted font-weight-normal">
-                                    <!-- Review Published Date Area -->
-                                    reviewed on
-                                    {{ r.created_on }}
-                                </span>
-                            </p>
-                            <!-- Review Rating Area -->
-                            <p>Rating: {{r.rating}}</p>
+                        <h3>Reviews:</h3>
+                        <div class="card-body">
+                            {% if user.is_authenticated %}
+                            <br>
+                            {% else %}
+                            <div>
+                                <strong> To leave a review of a product, please <a class="link"
+                                        href="{% url 'account_login' %}">sign in</a>, or <a class="link"
+                                        href="{% url 'account_signup' %}">sign up</a>. </strong>
+                            </div>
+                            <br>
+                            {% endif %}
+                            <!-- For Loop Area -->
+                            {% for r in review %}
+                            <div class="card-body" style="padding: 10px;">
+                                <p class="font-weight-bold">
+                                    <!-- Reviewer Name Area -->
+                                    {{ r.name }}
+                                    <span class=" text-muted font-weight-normal">
+                                        <!-- Review Published Date Area -->
+                                        reviewed on
+                                        {{ r.created_on }}
+                                    </span>
+                                </p>
+                                <!-- Review Rating Area -->
+                                <p>Rating: {{r.rating}}</p>
 
 
 
                                 <!-- Review Body Area -->
                                 {{ r.body | linebreaks }}
-                            <!-- </div> -->
-                            <!-- Edits or Deletes User Reviews  -->
-                            {% if user.is_authenticated and user.username == r.name or user.is_superuser %}
-                            <a href="{% url 'edit_user_review' r.id %}" class="link"
-                                aria-label="Go to the Edit Reviews Page">Edit &emsp;</a>
-                            <button type="button" class="link" data-toggle="modal" 
-                                data-target="#delete-review" style="border: none; background: none; color: red;">Delete</button>
-                            <br><br>
-                            <!-- Bootstrap modal to Delete Review -->
-                            <div class="modal fade" id="delete-review" tabindex="-1" role="dialog" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title">Delete Review</h5>
-                                      <div class="modal-body">
-                                        <p>Your review will be permanently deleted, are you sure?</p>
-                                        </div>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    </div>
-                                    <div class="modal-footer">
-                                      <a href="{% url 'delete_user_review' r.id %}" type="button" class="btn btn-primary" aria-label="Delete review">Delete</a>
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    </div>
-                                  </div>
                                 </div>
-                              </div>
-                            {% else %}
-                            {% if user.is_authenticated and user.username != r.name %}
-                            {% else %}
-                            {% endif %}
-                            {% endif %}
-                            {% endfor%}
-                        </div>
-                    </div>
-                    <!-- reviewing Area -->
-                    <div class="row col-md-4 card mb-4  mt-3 d-flex justify-content-between">
-                        <div class="card-body">
-                            {% if reviewed %}
-                            <div class="alert alert-success" role="alert">
-                                Your review is awaiting approval!
+                                <!-- Edits or Deletes User Reviews  -->
+                                {% if user.is_authenticated and user.username == r.name or user.is_superuser %}
+                                <a href="{% url 'edit_user_review' r.id %}" class="link"
+                                    aria-label="Go to the Edit Reviews Page">Edit &emsp;</a>
+                                <button type="button" class="link" data-toggle="modal" data-target="#delete-review"
+                                    style="border: none; background: none; color: red;">Delete</button>
+                                    <hr>
+                                <br>
+                                <!-- Bootstrap modal to Delete Review -->
+                                <div class="modal fade" id="delete-review" tabindex="-1" role="dialog"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Delete Review</h5>
+                                                <div class="modal-body">
+                                                    <p>Your review will be permanently deleted, are you sure?</p>
+                                                </div>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="{% url 'delete_user_review' r.id %}" type="button"
+                                                    class="btn btn-primary" aria-label="Delete review">Delete</a>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% else %}
+                                {% if user.is_authenticated and user.username != r.name %}
+                                {% else %}
+                                {% endif %}
+                                {% endif %}
+                                {% endfor%}
                             </div>
-                            {% else %}
-                            {% if user.is_authenticated %}
-
-                            <h3>Leave a review:</h3>
-                            <p>Posting as: {{ user.username }}</p>
-                            <form method="post" style="margin-top: 1.3em;">
-                                {{ review_form | crispy }}
-                                {% csrf_token %}
-                                <button class="shop-now-button btn" type="submit">Submit</button>
-                            </form>
-                            {% endif %}
-                            {% endif %}
                         </div>
+                        <!-- reviewing Area -->
+                        <div class="row col-md-4 card mb-4  mt-3 d-flex justify-content-between">
+                            <div class="card-body">
+                                {% if reviewed %}
+                                <div class="alert review-success" role="alert">
+                                    Your review is awaiting approval!
+                                </div>
+                                {% else %}
+                                {% if user.is_authenticated %}
+
+                                <h3>Leave a review:</h3>
+                                <p>Posting as: {{ user.username }}</p>
+                                <form method="post" style="margin-top: 1.3em;">
+                                    {{ review_form | crispy }}
+                                    {% csrf_token %}
+                                    <button class="shop-now-button btn" type="submit">Submit</button>
+                                </form>
+                                {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endwith %}
                     </div>
-                    {% endwith %}
                 </div>
             </div>
         </div>
-    </div>
     </div>
     {% endblock content %}
 

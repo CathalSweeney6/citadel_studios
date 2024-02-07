@@ -1,17 +1,17 @@
 {% extends "base.html" %}
-{% load static %} 
+{% load static %}
 {% block content %}
 
 <div class="container-fluid">
     <div class="row">
 
         <!-- Blog Entries Column -->
-        
+
         <div class="col-12 mt-3 left">
 
-    <div class="col-md-12 mt-6 card-body bg-white text-center text-black" id="eq_tag">
-        <h3>OUR CLIENTS</h3>
-    </div>
+            <div class="col-md-12 mt-6 card-body bg-white text-center text-black" id="eq_tag">
+                <h3>OUR CLIENTS</h3>
+            </div>
 
             <div class="row">
                 {% for clients in clients_list %}
