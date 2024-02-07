@@ -70,7 +70,7 @@ def product_detail(request, product_id):
     reviewed = False
     product = get_object_or_404(Product, pk=product_id)
     form = CalendarForm(request.POST)
-    review = product.reviews.all()
+    review = product.reviews.filter(approved=True)
     rating = request.POST.get('rating', 10)
 
     print('REVIEW before valid: ', review)
