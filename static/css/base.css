@@ -553,20 +553,20 @@ input[name='q']::placeholder {
 
 @media (max-width: 425px) {
     #about_box {
-        height: 30rem;
+        height: 32rem;
     }
     }
 
 
 @media (max-width: 375px) {
     #about_box {
-        height: 32rem;
+        height: 34rem;
     }
     }
 
 @media (max-width: 320px) {
     #about_box {
-        height: 34rem;
+        height: 36rem;
     }
     }
 }
