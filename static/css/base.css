@@ -340,7 +340,10 @@ input[name='q']::placeholder {
   }
   
   .footer {
-    position: relative;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
     height: 60px;
     width: calc(100%);
   }
