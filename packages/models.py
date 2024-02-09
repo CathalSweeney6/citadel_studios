@@ -2,11 +2,11 @@ from django.db import models
 from django.urls import reverse
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-class Category(models.Model):
 
+class Category(models.Model):
     class Meta:
-        verbose_name_plural = 'Categories'
-        
+        verbose_name_plural = "Categories"
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -18,7 +18,9 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        "Category", null=True, blank=True, on_delete=models.SET_NULL
+    )
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
@@ -40,19 +42,16 @@ class Calendar(models.Model):
 
 class Review(models.Model):
     product = models.ForeignKey(
-        Product, on_delete=models.CASCADE, related_name="reviews")
+        Product, on_delete=models.CASCADE, related_name="reviews"
+    )
     name = models.CharField(max_length=80)
     email = models.EmailField()
     rating = models.IntegerField(
-    default=10,
-    validators=[
-        MaxValueValidator(10),
-        MinValueValidator(1)
-        ]
+        default=10, validators=[MaxValueValidator(10), MinValueValidator(1)]
     )
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False) 
+    approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ["created_on"]
@@ -66,15 +65,10 @@ class Review(models.Model):
 
 
 class Time(models.Model):
-    product = models.ForeignKey(
-        Product, on_delete=models.CASCADE, related_name="time")
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="time")
     time = models.IntegerField(
-    default='--:--',
-    validators=[
-        MaxValueValidator(21),
-        MinValueValidator(10)
-        ]
+        default="--:--", validators=[MaxValueValidator(21), MinValueValidator(10)]
     )
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False) 
+    approved = models.BooleanField(default=False)
