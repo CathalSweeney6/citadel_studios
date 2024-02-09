@@ -5,7 +5,11 @@
 ![screenshot](documentation/screenshots/amiresposnive.png)
 
 # Live Site - [Citadel Studios](https://citadel-studios-d7f21bf416bb.herokuapp.com/) #
-# User Experience - UX #
+### User Experience - UX #
+
+### Agile Development
+
+This site was created using the Agile Development structure. I would create a user story / issue and add it to my project in Github. I would then mark when the user story was in progress, then, finally, mark it as done and close the issue. 
 
 ### User Stories
 
@@ -248,7 +252,15 @@ I tested my site on Google's 'Lighthouse' feature, which pointed out ways in whi
 
 #### Validation 
 
-I validated all html, css, javascript and python elements of my code and received zero errors.
+I validated my sites html files and received no errors. 
+
+![screenshot](documentation/screenshots/html_valid.png)
+
+I validated my sites css files and received no errors. 
+
+![screenshot](documentation/screenshots/css_valid.png)
+
+I used the [Code Beautify Python Linter and Beautifier](https://codebeautify.org/python-formatter-beautifier#), and the [JSHint JavaScript Validator](jshint.com/), to validate my Python and JavaScript files, and received no errors.
 
 # Setting Up a Django App
 

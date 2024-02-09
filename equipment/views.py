@@ -13,11 +13,11 @@ class EquipmentList(generic.ListView):
     template_name = "equipment.html"
     paginate_by = 6
 
+
 # View for full post in detail
 
 
 class EquipmentDetail(View):
-
     def get(self, request, slug, *args, **kwargs):
         queryset = Equipment.objects.filter(status=1)
         equipment = get_object_or_404(queryset, slug=slug)
@@ -25,9 +25,7 @@ class EquipmentDetail(View):
         return render(
             request,
             "equipment_detail.html",
-            {
-                "equipment": equipment
-            },
+            {"equipment": equipment},
         )
 
     def post(self, request, slug, *args, **kwargs):
@@ -35,11 +33,8 @@ class EquipmentDetail(View):
         queryset = Equipment.objects.filter(status=1)
         equipment = get_object_or_404(queryset, slug=slug)
 
-
         return render(
             request,
             "equipment_detail.html",
-            {
-                "equipment": equipment
-            },
+            {"equipment": equipment},
         )
