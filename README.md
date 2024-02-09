@@ -1,39 +1,41 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Citadel Studios #
 
-Welcome,
+‘Citadel Studios’ is my final coursework submission for my studies at Code Institute. The site is an e-commerce site for a fictional recording studio in Donegal, Ireland. Site users can create profiles, order recording packages, read blog posts on the studio's equipment and client roster, fill out and submit a ‘Contact Us’ and ‘Newsletter’ form, and follow external links to the studio’s Facebook Business Page, and Google Maps address link. 
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![screenshot](documentation/screenshots/amiresposnive.png)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+# User Experience - UX #
 
-## Codeanywhere Reminders
+### User Stories
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+* As a Site User, I can:
 
-`python3 -m http.server`
+1. Navigate through the site. 
+2. Register for a new user profile.
+3. View packages that are available for purchase.
+4. Add a package to my shooping bag. 
+5. Edit or remove items from my shopping bag. 
+6. Order and purchase a package using Stripe Payment. 
+7. View confirmation of my purchase/order on the order confirmation page. 
+8. View reviews for packages on their designated pages.
+9. Read blog posts on the studio's equipment and client roster. 
+10. Fill out a 'Contact Us' form.
+11. Receive a success message when the form is submitted.  
+12. Fill out a 'Newsletter' form. 
+13. Receive a success message when the form is submitted. 
+14. View the studio's Facebook Business Page, which opens in a new window, when the icon in the footer is clicked. 
+15. View the studio's Google Maps address link, which opens in a new window, when the icon in the footer is clicked. 
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+* As a registered Site User, I can:
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+1. Log in to the site. 
+2. Submit a review for a package on its designated page. 
+3. Receive a success message when the review is submitted for approval.  
+4. View my review once approved. 
+5. Edit my review through the frontend site, if needs be. 
+6. Delete my review through the frontend site, if needs be. 
 
-`http_server`
+* As a Site Admin, I can:
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+1. Create, edit, add images and links, and delete packages, blog posts, reviews, user profiles, and any correspondence or interactions with the site, in line with CRUD functionality. 
+2. I can save blog posts as drafts, or publish them upon completion.
