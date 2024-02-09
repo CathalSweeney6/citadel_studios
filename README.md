@@ -94,7 +94,7 @@ The navbar features the site's log/main home link, a link to the 'Recording Pack
 
 #### Searchbar 
 
-Above the navbar, sits the searchbar, where users can search for a product in non-case sensitive terms. 
+Above the navbar, sits the searchbar, where users can search for a product in non-case sensitive terms. if the user clicks the search button but does not enter a search criteria, they are redirected to the product_detail page, where an error message is displayed in the navbar. 
 
 #### Tagline 
 
@@ -227,12 +227,48 @@ I used LucidChart to create a Database Diagram for my project.
 * Lucidchart
 * Heroku 
 * AWS 
-* Stripe Payment 
+* Stripe Payment Webhooks
 
 
 ### SEO 
 
 To achieve proer SEO for my site, I inputted metatags into my site's main header, that refer to keywords associated and found throughout the site. I also included a Sitemap and robots.txt file, so that my site's links and layout could be sumbitted to Google for searching, and the files could be crawlable by Google Spiders. 
+
+#### Amazon AWS
+
+All static files were stored externally by AWS, Amazon Web Services. This is due to Heroku doesn't properly support static files. 
+
+The setup for AWS, though initially, a daunting prospect is quite easy to do. It can be broken down very simply. 
+
+* Sign up for an AWS account.
+* Once logged in, head to the AWS Management Console. 
+
+#### S3 Setup
+
+- In AWS, search for 'S3'.
+- In S3, create a new bucket, name it after your deployed Heroko name and pick your region. 
+- Change the bucket's settings to public, in order for it to work with Heroku. 
+- In 'Object Ownership,' enable 'ACLs', and select  'Bucket owner preferred.'
+- in 'Properties,' switch on static website hosting, enter `index.html` and `error.html` into the requested fields, and click Save.
+- In 'Permissions,' tab, paste in the required CORS configuration:
+
+	```shell
+	[
+		{
+			"AllowedHeaders": [
+				"Authorization"
+			],
+			"AllowedMethods": [
+				"GET"
+			],
+			"AllowedOrigins": [
+				"*"
+			],
+			"ExposeHeaders": []
+		}
+	]
+	```
+	
 
 ### Site Testing 
 
