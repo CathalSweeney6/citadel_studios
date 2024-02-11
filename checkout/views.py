@@ -42,72 +42,66 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    if request.method == "POST":
-        bag = request.session.get("bag", {})
+    if request.method == 'POST':
+        bag = request.session.get('bag', {})
 
         form_data = {
-            "full_name": request.POST["full_name"],
-            "email": request.POST["email"],
-            "phone_number": request.POST["phone_number"],
-            "country": request.POST["country"],
-            "postcode": request.POST["postcode"],
-            "town_or_city": request.POST["town_or_city"],
-            "street_address1": request.POST["street_address1"],
-            "street_address2": request.POST["street_address2"],
-            "county": request.POST["county"],
+            'full_name': request.POST['full_name'],
+            'email': request.POST['email'],
+            'phone_number': request.POST['phone_number'],
+            'country': request.POST['country'],
+            'postcode': request.POST['postcode'],
+            'town_or_city': request.POST['town_or_city'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST['street_address2'],
+            'county': request.POST['county'],
         }
 
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
-            pid = request.POST.get("client_secret").split("_secret")[0]
+            pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
-            for item_id, item_data, quantity in bag.items():
+            for item_id, item_data in bag.items():
                 try:
-                    print("Creating line item")
-                    print(item_data)
                     product = Product.objects.get(id=item_id)
-                    # if isinstance(item_data, int):
-                    #     print("Definitely creating line item")
-                    #     order_line_item = OrderLineItem(
-                    #         order=order,
-                    #         product=product,
-                    #         quantity=item_data,
-                    #     )
-                    #     order_line_item.save()
-                    order_line_item = OrderLineItem(
-                        order=order,
-                        product=product,
-                        quantity=quantity,
-                    )
-                    order_line_item.save()
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            product=product,
+                            quantity=item_data,
+                        )
+                        order_line_item.save()
+                    else:
+                      for date, date_data in item_data["dates"].items():
+                        for time, quantity in date_data["times"].items():
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                product=product,
+                                quantity=quantity,
+                            )
+                            order_line_item.save()
                 except Product.DoesNotExist:
-                    messages.error(
-                        request,
-                        (
-                            "One of the products in your bag wasn't found in our database. "
-                            "Please call us for assistance!"
-                        ),
+                    messages.error(request, (
+                        "One of the products in your bag wasn't found in our database. "
+                        "Please call us for assistance!")
                     )
                     order.delete()
-                    return redirect(reverse("view_bag"))
+                    return redirect(reverse('view_bag'))
 
             # Save the info to the user's profile if all is well
-            request.session["save_info"] = "save-info" in request.POST
-            return redirect(reverse("checkout_success", args=[order.order_number]))
+            request.session['save_info'] = 'save-info' in request.POST
+            return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
-            messages.error(
-                request,
-                "There was an error with your form. \
-                Please double check your information.",
-            )
+            messages.error(request, 'There was an error with your form. \
+                Please double check your information.')
     else:
-        bag = request.session.get("bag", {})
+        bag = request.session.get('bag', {})
         if not bag:
             messages.error(request, "There's nothing in your bag at the moment")
-            return redirect(reverse("products"))
+            return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
         total = current_bag["grand_total"]
