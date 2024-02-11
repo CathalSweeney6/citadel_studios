@@ -64,16 +64,25 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
-            for item_id, item_data in bag.items():
+            for item_id, item_data, quantity in bag.items():
                 try:
+                    print("Creating line item")
+                    print(item_data)
                     product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            product=product,
-                            quantity=item_data,
-                        )
-                        order_line_item.save()
+                    # if isinstance(item_data, int):
+                    #     print("Definitely creating line item")
+                    #     order_line_item = OrderLineItem(
+                    #         order=order,
+                    #         product=product,
+                    #         quantity=item_data,
+                    #     )
+                    #     order_line_item.save()
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        product=product,
+                        quantity=quantity,
+                    )
+                    order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(
                         request,
@@ -103,6 +112,8 @@ def checkout(request):
         current_bag = bag_contents(request)
         total = current_bag["grand_total"]
         stripe_total = round(total * 100)
+        print("Views total: ", total)
+        print("Views stripe_total: ", stripe_total)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
