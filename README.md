@@ -18,7 +18,7 @@ This site was created using the Agile Development structure. I would create a us
 1. Navigate through the site. 
 2. Register for a new user profile.
 3. View packages that are available for purchase.
-4. Add a package to my shooping bag. 
+4. Add a package to my shopping bag. 
 5. Edit or remove items from my shopping bag. 
 6. Order and purchase a package using Stripe Payment. 
 7. View confirmation of my purchase/order on the order confirmation page. 
@@ -112,20 +112,20 @@ Below the navbar, across all pages on the site, sits the site's tagline, 'The Ho
 
 #### Searchbar 
 
-Above the navbar, sits the searchbar, where users can search for a product in non-case sensitive terms. if the user clicks the search button but does not enter a search criteria, they are redirected to the product_detail page, where an error message is displayed in the navbar. 
+Above the navbar, sits the searchbar, where users can search for a product in non-case sensitive terms. if the user clicks the search button but does not enter a search criteria, they are redirected to the products page, where an error message is displayed in the navbar. 
 
 ![screenshot](documentation/screenshots/search.png)
 
 
 #### 'Book Now' Button 
 
-On the site's hompage, the user can access the recording packages page, by clicking the link on the navbar, or by clicking the 'Book Now' button, below the blurb on the home page. 
+On the site's homepage, the user can access the recording packages page, by clicking the link on the navbar, or by clicking the 'Book Now' button, below the blurb on the home page. 
 
 ![screenshot](documentation/screenshots/booknow.png)
 
 #### Recording Packages Page
 
-The user can view all four of the recording packages from this page. They can also access the site's navbar and searcbar, and can click the 'Contact Us' button at the bottom of the page, should they have any queries. Users can also filter their view of the packages, based on alphabetical order and price, through this page. 
+The user can view all four of the recording packages from this page. They can also access the site's navbar and searchbar, and can click the 'Contact Us' button at the bottom of the page, should they have any queries. Users can also filter their view of the packages, based on alphabetical order and price, through this page. 
 
 ![screenshot](documentation/screenshots/packages.png)
 
@@ -153,7 +153,7 @@ Users can view a brief informatical blurb about the studio, its whereabouts and 
 
 #### Equipment Blog Posts
 
-Users can view the list of six equipment blog posts, through this page, they can select whichever post they wish and will brought to the specific blog post's page when doing so.
+Users can view the list of six equipment blog posts, through this page, they can select whichever post they wish and will be brought to the specific blog post's page when doing so.
 
 
 ![screenshot](documentation/screenshots/eq.png)
@@ -166,7 +166,7 @@ Each blog post contains a featured image, an author tag, and the date and time t
 
 #### Client Blog Posts
 
-Users can view the list of three client blog posts, through this page, they can select whichever post they wish and will brought to the specific blog post's page when doing so.
+Users can view the list of three client blog posts, through this page, they can select whichever post they wish and will be brought to the specific blog post's page when doing so.
 
 ![screenshot](documentation/screenshots/clients.png)
 
@@ -190,7 +190,7 @@ When a user submits their 'Contact Us' form, they are directed to the success me
 
 #### Newsletter Page
 
-As part of the assesment criteria, stundents are required to "Add a newsletter signup form to your application." Users can submit their email address in this form, where their email address will be stored in the admin site. 
+As part of the assessment criteria, students are required to "Add a newsletter signup form to your application." Users can submit their email address in this form, where their email address will be stored in the admin site. 
 
 ![screenshot](documentation/screenshots/newsletter.png)
 
@@ -202,7 +202,7 @@ When a user submits their 'Newsletter' form, they are directed to the success me
 
 #### User Account / Signup / Login View
 
-When the user clicks the 'My Account' botton, they can login or register for a site account, view their account details, including previous order history, and logout, if desired. 
+When the user clicks the 'My Account' button, they can login or register for a site account, view their account details, including previous order history, and logout, if desired. 
 
 ![screenshot](documentation/screenshots/account.png)
 
@@ -222,7 +222,7 @@ Here, users can enter their login details, and continue to the site. A login suc
 
 #### Logout Page
 
-Here, the user is asked to confirm that they wish to logout of their account. Upon confirmation, The user is redirected to the home page, where a logout success message appears on the navbar. 
+Here, the user is asked to confirm that they wish to logout of their account. Upon confirmation, the user is redirected to the home page, where a logout success message appears on the navbar. 
 
 ![screenshot](documentation/screenshots/logout.png)
 
@@ -246,7 +246,7 @@ Users receive a message confirming their order on this page, they can also view 
 
 #### Order Confirmation Email
 
-If a user inputs a real/their actual email address during checkout, they will recieve an order confirmation email in their inbox. PLEASE NOTE: These order confirmation emails can tend to be sorted directly in your spam/junk folder, upon inspection.  
+If a user inputs a real/their actual email address during checkout, they will receive an order confirmation email in their inbox. PLEASE NOTE: These order confirmation emails can tend to be sorted directly in your spam/junk folder, upon inspection.  
 
 ![screenshot](documentation/screenshots/email.png)
 
@@ -256,7 +256,7 @@ The site's footer features links to two external sites, that both open in new ta
 
 #### Facebook Business Page
 
-The Facebook Business page was created using Facebook's 'Pages' tab. In order to create a Facebook business page, you must first have a Facebook account of your own.
+The Facebook Business Page was created using Facebook's 'Pages' tab. In order to create a Facebook Business Page, you must first have a Facebook account of your own.
 
 ![screenshot](documentation/screenshots/facebook.png)
 
@@ -324,11 +324,11 @@ I used LucidChart to create a Database Diagram for my project.
 
 ### SEO 
 
-To achieve proer SEO for my site, I inputted metatags into my site's main header, that refer to keywords associated and found throughout the site. I also included a Sitemap and robots.txt file, so that my site's links and layout could be sumbitted to Google for searching, and the files could be crawlable by Google Spiders. 
+To achieve proper SEO for my site, I inputted metatags into my site's main header, that refer to keywords associated and found throughout the site. I also included a Sitemap and robots.txt file, so that my site's links and layout could be sumbitted to Google for searching, and the files could be crawlable by Google Spiders. 
 
 #### Amazon AWS
 
-All static files were stored externally by AWS, Amazon Web Services. This is due to Heroku doesn't properly support static files. 
+All static files were stored externally by AWS, Amazon Web Services. This is due to the fact that Heroku doesn't properly support static files. 
 
 The setup for AWS, though initially, a daunting prospect is quite easy to do. It can be broken down very simply. 
 
@@ -338,11 +338,11 @@ The setup for AWS, though initially, a daunting prospect is quite easy to do. It
 #### S3 Setup
 
 - In AWS, search for 'S3'.
-- In S3, create a new bucket, name it after your deployed Heroko name and pick your region. 
+- In S3, create a new bucket, name it after your deployed Heroku name and pick your region. 
 - Change the bucket's settings to public, in order for it to work with Heroku. 
 - In 'Object Ownership,' enable 'ACLs', and select  'Bucket owner preferred.'
-- in 'Properties,' switch on static website hosting, enter `index.html` and `error.html` into the requested fields, and click Save.
-- In 'Permissions,' tab, paste in the required CORS configuration (below):
+- In 'Properties,' switch on static website hosting, enter `index.html` and `error.html` into the requested fields, and click Save.
+- In 'Permissions,' paste in the required CORS configuration (below):
 
 	```shell
 	[
@@ -371,7 +371,7 @@ The setup for AWS, though initially, a daunting prospect is quite easy to do. It
 2. Effect: Allow
 3. Principal: *
 4. Actions: GetObject
-5. Amazon Resource Name/ARN: your-AWN-goes-here.
+5. Amazon Resource Name/ARN: your-ARN-goes-here.
 6. Click 'Add Statement.'
 7. Click 'Generate Policy.'
 8. Copy the entire policy (below), and paste it into your 'Bucket Policy Editor.'
@@ -413,7 +413,7 @@ The setup for AWS, though initially, a daunting prospect is quite easy to do. It
 6. Select the policy, and when finished, click 'Add Permissions.'
 7. From 'JSON' select 'Import Managed Policy.'
 8. Search for S3, select the required policy, 'AmazonS3FullAccess,' and then click 'Import.'
-9. Once agaim, copy the ARN (below) from the S3 Bucket copied and paste it into 'Resources.'
+9. Once again, copy the ARN (below) from the S3 Bucket copied and paste it into 'Resources.'
 
 ```shell
  {
@@ -439,12 +439,12 @@ The setup for AWS, though initially, a daunting prospect is quite easy to do. It
 16. Click 'Attach Policy.'
 17. Search for your new policy, select it, then 'Attach Policy.'
 18. Click 'Add User' from 'User Groups.'
-19. Suggested Name: Enter your user an project name here. 
+19. Suggested Name: Enter your user and project name here. 
 20. For "Select AWS Access Type", select Programmatic Access.
 21. Add your new user to the group.
 22. Click 'Tags,' to proceed to the review policy page. Adding tags is optional. 
 23. Click 'Create User.'
-24. Click the button to Download .csv, and save a copy of it to your system. You cannot download this again, so make sure it is downlaoded successfully and stored securely. 
+24. Click the button to download .csv, and save a copy of it to your system. You cannot download this again, so make sure it is downloaded successfully and stored securely. 
 25. AWS_ACCESS_KEY_ID = Enter your access key ID here. 
 26. AWS_SECRET_ACCESS_KEY = Enter your secret key here. 
 
@@ -484,7 +484,7 @@ Create a new Stripe account and then, follow these steps, in order:
 6. Select 'Turn On.'
 7. Head back to 'Security,' page, and then head to 'App Passwords.'
 8. Select 'Mail.'
-9. for the device type, select 'Other.'
+9. For the device type, select 'Other.'
 10. Enter a custom name. 
 11. Retrieve your 16-character API key. Save this key securely, as it cannot be accessed again. 
 12. Retrieve your EMAIL_HOST_PASS 16-character API key, and the EMAIL_HOST_USER (the user's email address).
@@ -502,7 +502,7 @@ Testing was carried out extensively, whilst creating and publishing my site. As 
 
 #### Browser Testing 
 
-I created my website using Google Chrome. The site runs perfectly on the server. I also tested that each aspect of the site ran smoothly on Safari and Firefox. The site ran on both servers, with no errors or bugs. 
+I created my website using Google Chrome. The site runs perfectly on the server. I also tested that each aspect of the site ran smoothly on Safari and Firefox. The site ran on all servers, with no errors or bugs. 
 
 #### Lighthouse 
 
@@ -520,7 +520,7 @@ I validated my sites css files and received no errors.
 
 ![screenshot](documentation/screenshots/css_valid.png)
 
-I used the [Code Beautify Python Linter and Beautifier](https://codebeautify.org/python-formatter-beautifier#), and the [JSHint JavaScript Validator](jshint.com/), to validate my Python and JavaScript files, and received no errors.
+I used the [Code Beautify Python Linter and Beautifier](https://codebeautify.org/python-formatter-beautifier#), and the [JSHint JavaScript Validator](https://jshint.com/), to validate my Python and JavaScript files, and received no errors.
 
 # Setting Up a Django App
 
@@ -706,22 +706,22 @@ You can fork this repository by using the following steps:
 * This project was inspired by Code Institute's 'Boutique Ado' walkthrough e-commerce project.
 * The site's icons were taken from [fontawesome.com](https://fontawesome.com). 
 * All of the images on the site are royalty-free, and were taken from [Pexels.com](https://pexels.com/).
-* The site's logo font adn other site fonts were taken from [Google Fonts](https://fonts.google.com/). 
+* The site's logo font and other site fonts were taken from [Google Fonts](https://fonts.google.com/). 
 
 ## Resources Used
 
 * [Stack Overflow](https://stackoverflow.com/).
 * [W3Schools](https://www.w3schools.com/).
-* The contact form and newsletter, were created by following turorials by [Codemy.com](https://www.youtube.com/watch?v=AGtae4L5BbI).
-* The blog posts were created through a similar code structure to my previous project, [The Fjord](https://github.com/CathalSweeney6/thefjordblog), which was inspired by the 'I Think, Therefore I Blog, project 4 walkthrough project, by Code Institute.
-* The date and time picker/calendar was created by following a tutorial by [medium.com](https://mrasimzahid.medium.com/how-to-implement-django-datepicker-calender-in-forms-date-field-9e23479b5db).
-The creatiom, editing and deletion of reviews feature, was created by following a tutorial on how to create/edit/delete a user comment on [Medium.com](https://legionscript.medium.com/building-a-social-media-site-with-python-and-django-part-4-edit-delete-posts-add-comments-8e6ca1ef0441), which of course, I fully customised, so suit the review setting.  
+* The contact form and newsletter, were created by following tutorials by [Codemy.com](https://www.youtube.com/watch?v=AGtae4L5BbI).
+* The blog posts were created through a similar code structure to my previous project, [The Fjord](https://github.com/CathalSweeney6/thefjordblog), which was inspired by the 'I Think, Therefore I Blog,' project 4 walkthrough project, by Code Institute.
+* The date and time picker/calendar was created by following a tutorial by [Medium.com](https://mrasimzahid.medium.com/how-to-implement-django-datepicker-calender-in-forms-date-field-9e23479b5db).
+The creation, editing and deletion of reviews feature, was created by following a tutorial on how to create/edit/delete a user comment on [Medium.com](https://legionscript.medium.com/building-a-social-media-site-with-python-and-django-part-4-edit-delete-posts-add-comments-8e6ca1ef0441), which of course, I fully customised, so suit the review setting.  
 
 ## Acknowledgments 
 
-* I would like to thank my wife, Celia, and daughter, Éowyn, for their continuous support an encouragement, as I re-kindled my interest in software development, with the hopes of gaining a career in the field. 
+* I would like to thank my wife, Celia, and daughter, Éowyn, for their continuous support and encouragement, as I re-kindled my interest in software development, with the hopes of gaining a career in the field. 
 * I would like to thank the Mentors that I had during my studies at Code Instiute. I would like to thank Mr. Victor Miclovich, for his assistance with projects 1 - 3. I would like to thank Mr. Luke Buchanan, for his assistance with projects 4 and 5. I would also like to thank Mr. Tim Nelson, for filling-in for Mentor Support. 
 * I would like to thank the team at Tutor Support for their assistance and time during the creation of my projects. 
 * I would like to thank the Student Support and Careers team at Code Institute, for their assistance and advice throughout my studies. 
 * I would like to thank Code Institute for regaining my interest in software development. I believe that I have gained a great deal of knowledge from their course material and am confident in pursuing a career in the field. 
-* Lastly, and certainly not least, I would like to thank 'Taylor's of Harrogate / Yorkshire Tea,' for keeping me fuelled througout my studies! ☕
+* Lastly, and certainly not least, I would like to thank 'Taylor's of Harrogate / Yorkshire Tea,' for keeping me fuelled throughout my studies! ☕
